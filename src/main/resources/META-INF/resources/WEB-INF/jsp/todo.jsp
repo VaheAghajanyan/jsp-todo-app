@@ -6,22 +6,15 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" >
-    <title>Login page</title>
+    <title>Add Todo</title>
 </head>
 <body>
 <div class="container">
-    <h2>Welcome to the login page</h2>
-    <pre>${error}</pre>
+    <h2>Enter Todo Details</h2>
     <form method="post">
-        <div>
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name">
-        </div>
-        <div>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password">
-        </div>
-        <input type="submit">
+        Name: <input type="text" name="name">
+        Description: <input type="text" name="description">
+        <input type="submit" class="btn btn-success">
     </form>
 </div>
 </body>
