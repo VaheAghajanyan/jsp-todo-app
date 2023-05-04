@@ -1,23 +1,26 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" >
-    <title>Add Todo</title>
-</head>
-<body>
+<%@include file="common/header.jspf" %>
+<%@include file="common/navigation.jspf" %>
 <div class="container">
     <h2>Enter Todo Details</h2>
-    <form method="post">
-        Name: <input type="text" name="name">
-        Description: <input type="text" name="description">
+    <form:form method="post" modelAttribute="todo">
+        <fieldset class="mb-3">
+            <form:label path="name">Name</form:label>
+            <form:input type="text" name="name" path="name" required="required" />
+            <form:errors path="name" cssClass="text-warning"/>
+        </fieldset>
+        <fieldset class="mb-3">
+            <form:label path="description">Description</form:label>
+            <form:input type="text" name="description" path="description" required="required"/>
+            <form:errors path="description" cssClass="text-warning"/>
+        </fieldset>
+        <fieldset>
+            <form:label path="targetDate">Target Date</form:label>
+            <form:input path="targetDate" name="targetDate" required="required"/>
+            <form:errors path="targetDate" cssClass="text-warning"/>
+        </fieldset>
+        <form:input type="hidden" path="id" />
+        <form:input type="hidden" path="done" />
         <input type="submit" class="btn btn-success">
-    </form>
+    </form:form>
 </div>
-</body>
-<script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-<script src="webjars/jquery/3.6.0/jquery.min.js"></script>
-</html>
+<%@include file="common/footer.jspf" %>
